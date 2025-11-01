@@ -26,7 +26,7 @@ public class StudentController {
        Student st = new Student("id-001","sekhar",3.0);
        logger.info("student response--{}",st);
         logger.debug("student response for sfdfd developer--{}",st);
-        logger.info("jfdlskj->{}",service.getCourses());
+      //  logger.info("jfdlskj->{}",service.getCourses());
        return ResponseEntity.ok(st);
     }
 }
