@@ -14,7 +14,25 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJ0eXBlIjoiQVVUSCIsImlhdCI6MTc2MjA1OTA0OSwiZXhwIjoxNzYyMDYyNjQ5fQ.ccAiA6HnX1YOkrkJb0rJXNi04mCW-hvokjNt8eXsXKw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9098/student/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9098",
+					"path": [
+						"student",
+						"123"
+					]
+				}
 			},
 			"response": []
 		},
@@ -25,8 +43,35 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"configuredLevel\": \"DEBUG\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/actuator/loggers/org.example.controller.StudentController",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"loggers",
+						"org.example.controller.StudentController"
+					]
+				}
 			},
 			"response": []
 		},
@@ -34,11 +79,41 @@
 			"name": "login",
 			"id": "434371-4e0fab31-64ad-4b0b-a8b0-0a575d8eb7a1",
 			"protocolProfileBehavior": {
-				"disableBodyPruning": true
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9098/n/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9098",
+					"path": [
+						"n",
+						"login"
+					]
+				}
 			},
 			"response": []
 		}
