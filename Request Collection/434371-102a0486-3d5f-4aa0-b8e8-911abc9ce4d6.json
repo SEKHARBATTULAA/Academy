@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "434371-102a0486-3d5f-4aa0-b8e8-911abc9ce4d6",
+		"name": "Student Services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getStudentByID",
+			"id": "434371-85c4bfad-371a-4afa-aa93-de98c7c9ab1b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "loggerschanging",
+			"id": "434371-a5ab88d5-a445-400b-8c19-58db85d91b9a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"id": "434371-4e0fab31-64ad-4b0b-a8b0-0a575d8eb7a1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
