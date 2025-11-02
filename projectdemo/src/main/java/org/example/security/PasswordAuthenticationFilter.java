@@ -6,6 +6,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.util.JwtTokenProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -16,6 +18,8 @@ import java.io.IOException;
 import java.util.Map;
 
 public class PasswordAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
+
+    private static final Logger log = LoggerFactory.getLogger(AuthorizationFilter.class);
     private final JwtTokenProvider jwtTokenProvider;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -36,6 +40,9 @@ public class PasswordAuthenticationFilter extends AbstractAuthenticationProcessi
             throws AuthenticationException, IOException {
 
         // Parse JSON body: { "username": "...", "password": "..." }
+
+        log.debug("request.getInputStream()",request.getInputStream());
+        log.info("request.getInputStream() info",request.getInputStream());
         Map<String, String> creds = objectMapper.readValue(request.getInputStream(), Map.class);
         String username = creds.get("username");
         String password = creds.get("password");

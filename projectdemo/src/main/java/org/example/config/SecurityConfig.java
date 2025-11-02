@@ -11,6 +11,7 @@ import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationFilter;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import java.util.List;
 
@@ -39,10 +40,10 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login").permitAll()
+                        .requestMatchers("/n/login").permitAll()
                         .anyRequest().authenticated()
-                ).addFilterBefore(new AuthorizationFilter(getJwtTokenProvider()), AuthenticationFilter.class)
-                .addFilterBefore(new PasswordAuthenticationFilter(authenticationManager(), getJwtTokenProvider()),
+                ).addFilterBefore(new AuthorizationFilter(getJwtTokenProvider()), UsernamePasswordAuthenticationFilter.class)
+                .addFilterAt(new PasswordAuthenticationFilter(authenticationManager(), getJwtTokenProvider()),
                         org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class);
 
         return http.build();

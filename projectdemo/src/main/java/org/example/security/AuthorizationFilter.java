@@ -34,6 +34,7 @@ public class AuthorizationFilter extends OncePerRequestFilter {
             } else if (jwtTokenProvider.isNonAuthToken(token)) {
                 // Allow login to proceed but don’t set SecurityContext
              //   log.debug("Non-auth token detected — continuing without authentication");
+              //  filterChain.doFilter(request, response);
             }
         }
         filterChain.doFilter(request, response);
