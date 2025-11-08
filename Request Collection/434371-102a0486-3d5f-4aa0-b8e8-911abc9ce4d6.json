@@ -118,7 +118,7 @@
 			"response": []
 		},
 		{
-			"name": "login Copy",
+			"name": "okta",
 			"id": "434371-b7190000-e27a-4314-89ce-1fcf966cf71a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true,
